@@ -16,7 +16,7 @@ SubScribe is a robust, scalable Software as a Service (SaaS) platform designed t
 ## Technologies
 
 - Java 17
-- Spring Boot 3.x
+- Spring Boot
 - Spring Security with JWT authentication
 - Spring Data JPA
 - PostgreSQL
@@ -28,8 +28,8 @@ SubScribe is a robust, scalable Software as a Service (SaaS) platform designed t
 ### Prerequisites
 
 - JDK 17 or later
-- Maven 3.6+
-- PostgreSQL 13+
+- Maven 
+- PostgreSQL 
 - Docker (optional)
 
 ### Configuration
