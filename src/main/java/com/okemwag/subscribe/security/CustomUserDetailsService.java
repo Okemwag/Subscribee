@@ -14,22 +14,27 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
 
-    private final BusinessRepository businessRepository;
+  private final BusinessRepository businessRepository;
 
-    @Override
-    @Transactional
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Business business = businessRepository.findByEmail(email)
-                .orElseThrow(() -> new UsernameNotFoundException("Business not found with email: " + email));
+  @Override
+  @Transactional
+  public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+    Business business =
+        businessRepository
+            .findByEmail(email)
+            .orElseThrow(
+                () -> new UsernameNotFoundException("Business not found with email: " + email));
 
-        return UserPrincipal.create(business);
-    }
+    return UserPrincipal.create(business);
+  }
 
-    @Transactional
-    public UserDetails loadUserById(Long id) {
-        Business business = businessRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Business not found with id: " + id));
+  @Transactional
+  public UserDetails loadUserById(Long id) {
+    Business business =
+        businessRepository
+            .findById(id)
+            .orElseThrow(() -> new ResourceNotFoundException("Business not found with id: " + id));
 
-        return UserPrincipal.create(business);
-    }
+    return UserPrincipal.create(business);
+  }
 }

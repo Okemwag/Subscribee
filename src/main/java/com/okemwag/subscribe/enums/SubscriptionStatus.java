@@ -1,9 +1,9 @@
 package com.okemwag.subscribe.enums;
 
 public enum SubscriptionStatus {
-    ACTIVE,
-    CANCELLED,
-    EXPIRED,
-    SUSPENDED,
-    TRIAL
+  ACTIVE,
+  CANCELLED,
+  EXPIRED,
+  SUSPENDED,
+  TRIAL
 }
